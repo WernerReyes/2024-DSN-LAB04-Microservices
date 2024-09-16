@@ -12,8 +12,13 @@ const app = express();
 app.use(express.json());
 
 // Routes
+app.get('/', (req, res) => {
+  console.log('Welcome to the API');
+  res.send('Welcome to the API');
+});
 app.use('/api/clients', ClientRouter);
 app.use('/api/products', ProductRouter);
+
 
 
 app.listen(PORT, () => {
